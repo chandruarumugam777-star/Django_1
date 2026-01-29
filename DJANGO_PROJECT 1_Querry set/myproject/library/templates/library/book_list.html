@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+</head>
+<body>
+    <h1>All Books</h1>
+    <ul>
+        {% for book in all_books %}
+            <li>{{ book.title }} by {{ book.author }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books Values (title & author)</h2>
+    <ul>
+        {% for book in books_values %}
+            <li>{{ book.title }} by {{ book.author }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books Values List (title & price)</h2>
+    <ul>
+        {% for title, price in books_values_list %}
+            <li>{{ title }} - ${{ price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books by J.K. Rowling</h2>
+    <ul>
+        {% for book in books_by_author %}
+            <li>{{ book.title }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books (Price < 30 OR by Tolkien)</h2>
+    <ul>
+        {% for book in books_q %}
+            <li>{{ book.title }} by {{ book.author }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books containing 'harry'</h2>
+    <ul>
+        {% for book in books_title_contains %}
+            <li>{{ book.title }} by {{ book.author }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books Ordered by Price Ascending</h2>
+    <ul>
+        {% for book in books_ordered_asc %}
+            <li>{{ book.title }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books Ordered by Price Descending</h2>
+    <ul>
+        {% for book in books_ordered_desc %}
+            <li>{{ book.title }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Books Ordered by Author, then Price Descending</h2>
+    <ul>
+        {% for book in books_multi_order %}
+            <li>{{ book.author }} - {{ book.title }} - ${{ book.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
